@@ -40,7 +40,7 @@ function createRecordOfCharacterInstancesInAString(string) {
 function areAllTheRequiredCharactersAvailable(requiredCharacters,availableCharacters) {
   let arrayOfCharacters = Object.keys(requiredCharacters)
   return arrayOfCharacters.every(character => {
-    return requiredCharacters[character] === availableCharacters[character]
+    return requiredCharacters[character] <= availableCharacters[character]
   })
 }
   
