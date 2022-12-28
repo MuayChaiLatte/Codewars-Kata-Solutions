@@ -18,3 +18,38 @@
 
 
 // MY SOLUTION
+
+function listSquared(m, n) {
+    let answerArray = []
+    for (let i=m; i <=n; i++) {
+      let arrayOfDivisors = arrayOfAllDivisorsOfN(i)
+      let sumOfSquaredDivisors = sumOfSquaredArrayElements(arrayOfDivisors)
+      if (isItASquareNumber(sumOfSquaredDivisors)) {
+        answerArray.push([i,sumOfSquaredDivisors])
+      }
+    }
+    return answerArray
+  }
+  
+function sumOfSquaredArrayElements(array) {
+    return array.reduce((sum,element) => sum + Math.pow(element,2),0)
+}
+  
+function arrayOfAllDivisorsOfN(n) {
+    let array = []
+    for (let i=1; i <= Math.round(Math.sqrt(n)); i++) { // Check which integers from 1 to the square root of n are divisors of n
+      if (n % i === 0) { // If n is divisible by i, then i must be a divisor
+        array.push(i) // Record the divisor in the array
+        if (n/i !== i) { // Prevents duplication of square root divisors in the array
+          array.push(n/i)
+        }
+      }
+    }
+    return array
+}
+  
+function isItASquareNumber(n) {
+    let squareRoot = Math.sqrt(n)
+    return Math.round(squareRoot) === squareRoot // If a square root, the rounded value should be exactly equal to the unrounded
+}
+  

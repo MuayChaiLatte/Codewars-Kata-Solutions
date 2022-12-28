@@ -26,3 +26,85 @@
 
 
 // MY SOLUTION
+
+function chooseBestSum(t, k, ls) {
+    
+}
+
+function myFunc() {
+    
+}
+
+function largestValueOfAnArrayBelowALimit(array,limit) {
+  return array.reduce((maxValue,element) => {
+    if (element > maxValue && element <= limit ) {
+        return element
+    }
+    else {
+        return maxValue
+    }
+  },-Infinity) 
+}
+
+function sumOfTheElementsOfAnArray(array) {
+    return array.reduce((sum,element) => sum+element,0)
+}
+
+function arrayOfAllCombinationsFromAnArray(set,combinationSize) {
+    let arrayOfCombinations = []
+    let sliceEnd = combinationSize - 2
+    for (let i=0;i<=array.length-combinationSize; i++) {
+        arrayOfCombinations.push(set.slice(i,))
+    }
+}
+
+[1 2 3 4 5 6 7 8 9 10]
+
+array length = 10
+end start position = 2 = array length - combo length
+combo size = 5 
+
+iteration method
+start position = 0
+combo length = 4
+array length = 10
+sliceEnd = combo length - 2 + start position
+
+
+
+array.slice(start,limit) + array[limit+1]
+add to limit + 1 until array length reached
+increment origina limit and start values
+stop when limit+1 greater than last array member
+
+
+function findUniqueValue(array,value) {
+    return array.find(element => element !== value)
+}
+
+
+
+
+
+/*
+put an element into the array
+put another element into the array only if no other elements within the new array equal it  
+
+
+3 inputs: integer, integer, array of integers
+
+output: single integer
+
+return the largest sum of combination number of integers less than the sum limit
+
+from the integer array, create a new array of subarrays of all permutations of town visit combinations that satisfy town limit
+sum 
+    create a unique array of unique integers
+    keep creating unique arrays until none left
+
+
+reduce each of the subarrays in this new array to a sum integer
+
+scan the array and return the largest integer less than the distance limit
+
+*/

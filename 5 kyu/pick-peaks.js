@@ -19,3 +19,68 @@
 
 // MY SOLUTION 
 
+function pickPeaks(arr){
+    let positionAndPeaks = {pos: [], peaks: []}
+    arr.forEach((element,index) => {
+        if (isNum1LowerThanNum2())
+    })
+}
+  
+  
+function isNum1LowerThanNum2(num1,num2) {
+    return num1 < num2
+  }
+  
+  function addElementToEndOfAnArray(element,array) {
+    array.push(element)
+  }
+  
+  function recordNewPeakPosition(peakPosition) {
+    addElementToEndOfAnArray(peakPosition,positionsAndPeaks.pos)
+  }
+  
+  function recordNewPeakValue(peakValue) {
+    addElementToEndOfAnArray(peakValue,positionsAndPeaks.peaks)
+  }
+  
+  function recordPeakandPosition(element,index) {
+    recordNewPeakPosition(index)
+    recordNewPeakValue(element)
+  }
+    
+  
+  /*
+  for a number to be a peak
+  it has to have a lower number either side of it,
+  aka the subarray between it and the first higher number must contain a lower number
+  aka the subarray between it and the first lower number must contain no higher numbers
+  
+  
+  input array of integers
+  output, object, string-array pair
+  
+  do not mutate array
+  
+  first and last elements of array ignored
+  examine each element
+    if there is no previous element
+      examine next element
+    if previous element lower
+      if there is no next element
+        return
+      if next element lower
+        record current element value in peaks property array
+        record current element position in pos property array
+        examine element after next element
+      else if next element the same
+        check element after next element
+      else next element higher
+        examine next element, only need to check element after next element this time
+    else if previous element the same
+      check element before previous element
+    else previous element higher
+      examine next element
+      
+  
+  
+  */
